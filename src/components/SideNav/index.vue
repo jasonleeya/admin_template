@@ -1,5 +1,9 @@
 <template>
    <div class="side-nav">
+      <div class="logo">
+         <img class="logo-img" :src="require('@/assets/logo.png')" alt="">
+         <div class="logo-text" v-if="!asideCollapse">Logo</div>
+      </div>
       <el-menu class="side-nav-menu"
                :collapse="asideCollapse"
                :unique-opened="true"
@@ -47,7 +51,7 @@
                                     },
 
                                 ]
-                            }  , {
+                            }, {
                                 title: '二级菜单1-2',
                                 id: 's3',
                                 path: '/three'
@@ -78,9 +82,20 @@
                 ]
             }
         },
-        watch:{
+        watch: {
             '$store.state.isSideNavCollapse'() {
-               this.asideCollapse= this.$store.state.isSideNavCollapse
+                this.asideCollapse = this.$store.state.isSideNavCollapse;
+
+                let elments = document.querySelectorAll('.aside .el-submenu__title  span, .aside .el-menu-item  span,.el-icon-arrow-down:before')
+                if (this.asideCollapse) {
+                    elments.forEach(function (el) {
+                        el.style.opacity = '0'
+                    });
+                } else {
+                    elments.forEach(function (el) {
+                        el.style.opacity = '1'
+                    });
+                }
             }
         }
     }
@@ -88,10 +103,28 @@
 <style>
 </style>
 <style scoped>
-.side-nav-menu,.side-nav {
-   height: 100%;
-}
-.el-menu {
-   border-right: 0 solid transparent;
-}
+   .side-nav {
+      height: 100%;
+   }
+
+   .el-menu {
+      border-right: 0 solid transparent;
+   }
+
+   .logo {
+      text-align: center;
+      width: 100%;
+      /*height: 60px;*/
+      padding-top: 10px;
+   }
+
+   .logo-img {
+      width: 36px;
+   }
+
+   .logo-text {
+      font-size: 24px;
+      height: 30px;
+   }
+
 </style>

@@ -32,7 +32,7 @@
             }
         },
         mounted() {
-            console.log(this.$router.options.routes)
+            // console.log(this.$router.options.routes)
         },
         beforeRouteUpdate(to,from,next) {
             this.$store.dispatch('pushBookmark', {
@@ -66,6 +66,7 @@
    }
    .el-main {
       margin: 0 20px;
+      border-top-right-radius: 8px;
    }
 
 

@@ -147,7 +147,7 @@
       line-height: 36px;
       display: inline-block;
       cursor: default;
-      font-size: 14px;
+      font-size: 15px;
       text-align: center;
       padding: 0 10px;
       position: relative;

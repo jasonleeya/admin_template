@@ -4,6 +4,8 @@ $sideNavBGColor: #545c64;
 $sideNavTextColor: #fff;
 $sideNavHoverBGColor: #434A50;
 $headerBGColor: #eaeeeb;
+$headerTextColor: #000;
+$logoTextColor: #fff;
 $bookmarkBGColor: #d9d2ce;
 $borderColor: #dedede;
 $mainBgColor: #ffffff;
@@ -28,97 +30,114 @@ body[default] {
     background-color: $contentContainerBGColor;
   }
 
-  .side-nav-menu {
-    background-color: $sideNavBGColor !important;
-  }
-
-  .el-submenu .el-menu {
-    background-color: $sideNavBGColor !important;
-  }
-
-  .el-submenu__title *, .el-menu-item * {
-    color: $sideNavTextColor;
-  }
-
-  .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
-    background-color: $sideNavHoverBGColor !important;
-  }
-
-  .el-menu-item.is-active {
-    background-color: $sideNavBGColor !important;
-  }
-
   .aside {
     background-color: $sideNavBGColor;
-  }
 
-  .el-menu-item.is-active {
-    color: $sideNavTextColor !important;
-  }
+    .side-nav-menu {
+      background-color: $sideNavBGColor !important;
+    }
 
-  .side-nav-menu i {
-    color: $sideNavTextColor !important;
+    .el-submenu .el-menu {
+      background-color: $sideNavBGColor !important;
+    }
+
+    .el-submenu__title *, .el-menu-item * {
+      color: $sideNavTextColor;
+    }
+
+    .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
+      background-color: $sideNavHoverBGColor !important;
+    }
+
+    .el-menu-item.is-active {
+      background-color: $sideNavBGColor !important;
+    }
+
+    .el-menu-item.is-active {
+      color: $sideNavTextColor !important;
+    }
+
+    .side-nav-menu i {
+      color: $sideNavTextColor !important;
+    }
+
+    .logo-text {
+      color: $logoTextColor;
+    }
   }
 
   .header {
     background-color: $headerBGColor;
-    //border-bottom: 1px solid $borderColor;
+
+    .header-top {
+      color: $headerTextColor;
+    }
+
+    .header-bookmark {
+      .bookmarks {
+        background-color: $bookmarkBGColor;
+        color: $bookmarkTextColor;
+        border: 1px solid $borderColor;
+        border-bottom: none;
+      }
+
+      .bookmarks:after {
+        background-color: $headerBGColor;
+        border-left: solid 1px $borderColor;
+        border-bottom: solid 1px $borderColor;
+      }
+
+      .bookmarks li:last-child:after {
+        background-color: $bookmarkActiveBgColor;
+      }
+
+      .bookmarks-last-not-active li:last-child:after {
+        background-color: $bookmarkBGColor
+      }
+
+      .bookmark {
+        border-right: 1px solid $borderColor;
+      }
+
+      .bookmark:hover {
+        color: $bookmarkTextActiveColor;
+        transition: font-size 0.3s, width 0.3s;
+      }
+
+      .bookmark:not(.bookmark-active):hover {
+        color: $bookmarkTextActiveColor;
+        transition: font-size 0.3s, width 0.3s;
+        background-color: rgba($bookmarkActiveBgColor, 0.5);
+      }
+
+      .bookmark-active {
+        background-color: $bookmarkActiveBgColor;
+        color: $bookmarkTextActiveColor;
+      }
+
+      .iconguanbi1 {
+        color: $bookmarkTextActiveColor;
+      }
+
+      .arrow {
+        background-color: $bookmarkArrowBGColor;
+      }
+
+      .arrow span {
+        color: $bookmarkArrowColor;
+      }
+
+      .close-all {
+        color: $bookmarkTextColor;
+        border-bottom: none;
+      }
+
+      .close-all:hover {
+      }
+
+    }
   }
 
-  .header-bookmark {
-    .bookmarks {
-      background-color: $bookmarkBGColor;
-      color: $bookmarkTextColor;
-      border: 1px solid $borderColor;
-      border-bottom: none;
-    }
-    .bookmarks:after {
-      background-color: $headerBGColor;
-      border-left: solid 1px $borderColor;
-      border-bottom: solid 1px $borderColor;
-    }
-    .bookmarks li:last-child:after{
-      background-color: $bookmarkActiveBgColor;
-    }
-    .bookmarks-last-not-active li:last-child:after {
-      background-color:$bookmarkBGColor
-    }
-
-    .bookmark {
-      border-right: 1px solid $borderColor;
-    }
-
-    .bookmark:hover {
-      font-size: 16px;
-      color: $bookmarkTextActiveColor;
-      transition: font-size 0.3s, width 0.3s;
-    }
-
-    .bookmark-active {
-      background-color: $bookmarkActiveBgColor;
-      color: $bookmarkTextActiveColor;
-    }
-
-    .iconguanbi1 {
-      color: $bookmarkTextActiveColor;
-    }
-
-    .arrow {
-      background-color: $bookmarkArrowBGColor;
-    }
-
-    .arrow span {
-      color: $bookmarkArrowColor;
-    }
-
-    .close-all {
-      color: $bookmarkTextColor;
-      border-bottom: none;
-    }
-
-    .close-all:hover {
-    }
-  }
 
 
 }
