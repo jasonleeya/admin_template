@@ -31,10 +31,13 @@
                 sideNavWidth: '210px'
             }
         },
+        mounted() {
+            console.log(this.$router.options.routes)
+        },
         beforeRouteUpdate(to,from,next) {
             this.$store.dispatch('pushBookmark', {
                 name: to.meta.cName,
-                link: to.path
+                path: to.path
             });
             next();
         },

@@ -7,12 +7,12 @@ $headerBGColor: #eaeeeb;
 $bookmarkBGColor: #d9d2ce;
 $borderColor: #dedede;
 $mainBgColor: #ffffff;
-$bookmarkActiveBgColor: $mainBgColor;
-$contentContainerBGColor: $headerBGColor;
 $bookmarkTextColor: #8a8a8a;
 $bookmarkTextActiveColor: #000;
 $bookmarkArrowBGColor: #d9d9d9;
 $bookmarkArrowColor: #000;
+$bookmarkActiveBgColor: $mainBgColor;
+$contentContainerBGColor: $headerBGColor;
 
 
 body[default] {
@@ -72,6 +72,17 @@ body[default] {
       border: 1px solid $borderColor;
       border-bottom: none;
     }
+    .bookmarks:after {
+      background-color: $headerBGColor;
+      border-left: solid 1px $borderColor;
+      border-bottom: solid 1px $borderColor;
+    }
+    .bookmarks li:last-child:after{
+      background-color: $bookmarkActiveBgColor;
+    }
+    .bookmarks-last-not-active li:last-child:after {
+      background-color:$bookmarkBGColor
+    }
 
     .bookmark {
       border-right: 1px solid $borderColor;
@@ -101,14 +112,11 @@ body[default] {
     }
 
     .close-all {
-      background-color: rgba($bookmarkBGColor, 0.6);
       color: $bookmarkTextColor;
-      border: 1px solid $borderColor;
       border-bottom: none;
     }
 
     .close-all:hover {
-      background-color: rgba($bookmarkBGColor, 0.9);
     }
   }
 

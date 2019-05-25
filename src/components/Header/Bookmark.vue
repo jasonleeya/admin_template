@@ -10,25 +10,31 @@
          <ul class="bookmarks" ref="bookmark">
             <li class="bookmark"
                 v-for="item in bookmarkList"
-                :class="{'bookmark-active':$route.path===item.link}">
-               <router-link tag="span" :to="item.link">{{item.name}}</router-link>
-               <span class="iconfont iconguanbi1"
-                     v-show="shouldShowCloseIco(item)"
-                     @click="closeBookmark(item.name)"></span>
+                :class="{'bookmark-active':$route.path===item.path,}">
+               <router-link tag="span" :to="item.path">{{item.name}}</router-link>
+
+               <el-tooltip content="关闭此页" :open-delay="200" placement="bottom" effect="light">
+            <span class="iconfont iconguanbi1"
+                  v-show="shouldShowCloseIco(item)"
+                  @click="closeBookmark(item.name)">
+            </span>
+               </el-tooltip>
+
+
             </li>
          </ul>
-      </div>
 
+         <div class="close-all">
+            <el-tooltip content="关闭全部" :open-delay="200" placement="bottom" effect="light">
+           <span class="iconfont iconguanbi"
+                 @click="closeAllBookmark"></span>
+            </el-tooltip>
+         </div>
+      </div>
       <div v-show="shouldShowArrows"
            class="arrow right-arrow"
            @click="bookmarkRightMove">
          <span class="iconfont iconjiantoushang1"></span></div>
-      <div class="close-all">
-         <el-tooltip content="关闭全部" :open-delay="500" placement="bottom" effect="light">
-           <span class="iconfont iconguanbi"
-                 @click="closeAllBookmark"></span>
-         </el-tooltip>
-      </div>
 
    </div>
 
@@ -43,10 +49,17 @@
                 shouldShowArrows: false
             }
         },
+        updated() {
+            if (this.$route.path === this.$store.state.bookmarkList[this.$store.state.bookmarkList.length - 1].path) {
+                this.$refs.bookmark.classList.remove('bookmarks-last-not-active');
+            } else {
+                this.$refs.bookmark.classList.add('bookmarks-last-not-active')
+            }
+        },
         mounted() {
             const params = {
                 name: this.$route.meta.cName,
-                link: this.$route.path
+                path: this.$route.path
             };
             //mounted设置默认书签
             this.$store.dispatch('pushBookmark', params);
@@ -61,7 +74,7 @@
             handleBookmarkOverflow() {
                 let headerWidth = this.$refs.bookmarkWrapper.clientWidth;
                 let bookmarkWidth = this.$refs.bookmark.clientWidth;
-                this.shouldShowArrows = bookmarkWidth > headerWidth;
+                this.shouldShowArrows = bookmarkWidth + 25 > headerWidth;
 
             },
             bookmarkRightMove() {
@@ -73,16 +86,16 @@
             closeBookmark(name) {
                 if (this.$store.state.bookmarkList.length > 1) {
                     this.$store.dispatch('deleteBookmark', name)
-                    this.$router.push(this.$store.state.bookmarkList[this.$store.state.bookmarkList.length - 1].link);
+                    this.$router.push(this.$store.state.bookmarkList[this.$store.state.bookmarkList.length - 1].path);
                 } else if (this.$store.state.bookmarkList.length === 1 && this.$route.path === '/') {
                 } else {
-                    this.$store.dispatch('clearBookmark');
+                    this.$store.dispatch('deleteBookmark', name)
                     this.$router.push('/');
                 }
             },
             shouldShowCloseIco(item) {
                 if (this.$store.state.bookmarkList.length > 1) {
-                    return this.$route.path === item.link
+                    return this.$route.path === item.path
                 } else {
                     return this.$route.path !== '/';
 
@@ -100,6 +113,7 @@
         watch: {
             "$store.state.bookmarkList"() {
                 this.bookmarkList = this.$store.state.bookmarkList;
+
             }
         }
     }
@@ -107,11 +121,13 @@
 
 <style scoped>
    .bookmark-wrapper {
-      overflow-x: scroll;
+      overflow-x: hidden;
       overflow-y: hidden;
-      margin-top: 2px;
+      margin-top: 7px;
       margin-left: 20px;
       position: relative;
+      /*display: inline-block;*/
+      white-space: nowrap;
    }
 
    .bookmark-wrapper::-webkit-scrollbar {
@@ -121,25 +137,47 @@
    .bookmarks {
       display: inline-block;
       white-space: nowrap;
-      height: 40px;
+      height: 35px;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
-      overflow: hidden;
    }
 
    .bookmark {
-      height: 40px;
-      line-height: 40px;
+      height: 35px;
+      line-height: 36px;
       display: inline-block;
       cursor: default;
       font-size: 14px;
       text-align: center;
       padding: 0 10px;
-      margin-bottom: 10px;
+      position: relative;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
    }
 
    .bookmarks li:last-child {
       border-right: none;
+   }
+
+   .bookmarks li:last-child:after,
+   .bookmarks-last-not-active li:last-child:after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 27px;
+      position: absolute;
+      right: -10px;
+      bottom: 0;
+   }
+
+   .bookmarks:after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 27px;
+      position: absolute;
+      bottom: 0;
+      border-bottom-left-radius: 8px;
    }
 
    .bookmark span {
@@ -155,7 +193,7 @@
       position: absolute;
       height: 40px;
       line-height: 40px;
-      width: 20px;
+      width: 21px;
       text-align: center;
       top: 42px;
    }
@@ -165,13 +203,15 @@
    }
 
    .left-arrow {
+      border-top-right-radius: 5px;
+      /*border-bottom-right-radius: 5px;*/
 
    }
 
    .iconguanbi1 {
       font-size: 12px;
       margin-left: 10px;
-      display: inline-block;
+      /*display: inline-block;*/
    }
 
    .iconguanbi1:hover {
@@ -181,29 +221,27 @@
 
    .right-arrow {
       right: 0;
-
+      border-top-left-radius: 5px;
+      /*border-bottom-left-radius: 5px;*/
    }
 
    .close-all {
-      position: absolute;
-      height: 40px;
-      line-height: 40px;
-      width: 40px;
       text-align: center;
-      right: 20px;
-      top: 42px;
       box-sizing: border-box;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
+      display: inline-block;
+      z-index: 9999;
+      margin-left: 10px;
    }
 
    .close-all span {
       display: block;
-      font-size: 14px;
+      font-size: 12px;
    }
 
    .close-all span:hover {
-      font-size: 16px;
+      font-size: 14px;
       transition: font-size 0.2s;
    }
 </style>

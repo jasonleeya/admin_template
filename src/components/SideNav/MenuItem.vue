@@ -1,10 +1,10 @@
 <template>
    <el-menu-item :index="menu.id">
       <i :class="'iconfont '+menu.icon"></i>
-      <span slot="title" v-if="menu.link" >
-         <router-link tag="span" :to="menu.link">{{menu.title}}</router-link>
+      <span slot="title" v-if="menu.path" >
+         <router-link tag="span" :to="menu.path">{{menu.title}}</router-link>
       </span>
-      <span slot="title" v-else="!menu.link" >
+      <span slot="title" v-else="!menu.path" >
          {{menu.title}}
       </span>
    </el-menu-item>

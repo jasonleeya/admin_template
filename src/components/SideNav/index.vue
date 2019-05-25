@@ -39,22 +39,22 @@
                                     {
                                         title: '三级菜单1-1-1',
                                         id: 't1',
-                                        link: '/'
+                                        path: '/'
                                     }, {
                                         title: '三级菜单1-1-2',
                                         id: 't2',
-                                        link: '/two'
+                                        path: '/two'
                                     },
 
                                 ]
                             }  , {
                                 title: '二级菜单1-2',
                                 id: 's3',
-                                link: '/three'
+                                path: '/three'
                             }, {
                                 title: '二级菜单1-3',
                                 id: 's4',
-                                link: '/four'
+                                path: '/four'
                             },
                         ]
                     },

@@ -2,6 +2,7 @@
    <div class="header">
       <div class="top">
          <i @click="toggleSideNavCollapse" class="iconfont iconcaidan"></i>
+         <div class="right-tools"></div>
       </div>
       <bookmark></bookmark>
    </div>

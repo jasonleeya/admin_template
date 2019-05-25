@@ -14,13 +14,23 @@ export default new Vuex.Store({
             state.isSideNavCollapse = !state.isSideNavCollapse
         },
         clearBookmarkStatus(state) {
-            state.bookmarkList = []
+            let index = {};
+            state.bookmarkList.forEach(function (item) {
+                if (item.path === '/') {
+                    index = {
+                        path: '/',
+                        name: item.name
+                    };
+                }
+                state.bookmarkList=[index]
+            });
+
         },
 
         pushBookmarkStatus(state, payload) {
             let flag = true;
             state.bookmarkList.forEach(item => {
-                if (item.link === payload.link) {
+                if (item.path === payload.path) {
                     flag = false;
                 }
             });
