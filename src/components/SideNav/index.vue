@@ -119,7 +119,7 @@
    }
 
    .logo-img {
-      width: 36px;
+      width: 24px;
    }
 
    .logo-text {

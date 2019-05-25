@@ -1,10 +1,35 @@
 <template>
    <div class="header">
       <div class="header-top">
-         <i @click="toggleSideNavCollapse" v-if="!asideCollapse" class="iconfont iconcaidanguan"></i>
-         <i @click="toggleSideNavCollapse" v-else="asideCollapse" class="iconfont iconcaidankai"></i>
-         <span class="greeting">你好，JasonLee</span>
-      </div>
+         <span @click="toggleSideNavCollapse" v-if="!asideCollapse" class="iconfont iconcaidanguan"></span>
+         <span @click="toggleSideNavCollapse" v-else="asideCollapse" class="iconfont iconcaidankai"></span>
+
+
+       <div class="header-top-options">
+          <el-dropdown trigger="click" class="greeting">
+             <el-button size="mini" plain>
+                你好，JasonLee<i class="el-icon-arrow-down el-icon--right"></i>
+             </el-button>
+             <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>修改密码</el-dropdown-item>
+                <el-dropdown-item>退出登录</el-dropdown-item>
+             </el-dropdown-menu>
+          </el-dropdown>
+
+          <el-dropdown @command='toggleTheme' trigger="click" class="theme">
+             <span class="iconfont iconzhuti"></span>
+             <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item
+                        v-for="(item,index) in themes"
+                        :key="index"
+                        :command="(item)">{{item}}
+                </el-dropdown-item>
+             </el-dropdown-menu>
+          </el-dropdown>
+       </div>
+       </div>
+
+
       <bookmark></bookmark>
    </div>
 </template>
@@ -18,18 +43,25 @@
             Bookmark
         },
         data() {
-            return{
-                asideCollapse:false
+            return {
+                asideCollapse: false,
+                themes: [
+                    'default',
+                    'theme1'
+                ]
             }
         },
         methods: {
             toggleSideNavCollapse() {
                 this.$store.dispatch('toggleSideNavCollapse')
+            },
+            toggleTheme(theme) {
+                document.body.setAttribute('theme',theme)
             }
         },
-        watch:{
+        watch: {
             '$store.state.isSideNavCollapse'() {
-                this.asideCollapse= this.$store.state.isSideNavCollapse
+                this.asideCollapse = this.$store.state.isSideNavCollapse
             }
         }
     }
@@ -41,19 +73,35 @@
    }
 
 
-   .iconcaidanguan,.iconcaidankai {
+   .iconcaidanguan, .iconcaidankai {
       margin-left: 20px;
       font-size: 20px;
    }
+
    .header-top {
-      height: 40px;
-      line-height: 40px;
+      height: 50px;
+      line-height: 55px;
       position: relative;
+      top:0;
    }
 
+   .header-top-options {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+   }
+   .el-dropdown {
+      height: 35px;
+   }
    .greeting {
       font-size: 15px;
-      position: absolute;
-      right: 20px;
+      margin-right: 20px;
+      float: right;
+   }
+
+   .theme {
+      float: right;
+      margin-right: 20px;
    }
 </style>

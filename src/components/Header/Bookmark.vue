@@ -74,7 +74,14 @@
             handleBookmarkOverflow() {
                 let headerWidth = this.$refs.bookmarkWrapper.clientWidth;
                 let bookmarkWidth = this.$refs.bookmark.clientWidth;
-                this.shouldShowArrows = bookmarkWidth + 25 > headerWidth;
+
+                if (bookmarkWidth + 40 > headerWidth) {
+                    this.shouldShowArrows = true;
+                    document.querySelector('.el-main').style.borderTopRightRadius='0'
+                } else {
+                    this.shouldShowArrows = false;
+                    document.querySelector('.el-main').style.borderTopRightRadius='8px'
+                }
 
             },
             bookmarkRightMove() {
@@ -147,7 +154,7 @@
       line-height: 36px;
       display: inline-block;
       cursor: default;
-      font-size: 15px;
+      font-size: 14px;
       text-align: center;
       padding: 0 10px;
       position: relative;
@@ -193,9 +200,9 @@
       position: absolute;
       height: 40px;
       line-height: 40px;
-      width: 21px;
+      width: 20px;
       text-align: center;
-      top: 42px;
+      top: 52px;
    }
 
    .arrow span {
@@ -237,11 +244,7 @@
 
    .close-all span {
       display: block;
-      font-size: 12px;
+      font-size: 14px;
    }
 
-   .close-all span:hover {
-      font-size: 14px;
-      transition: font-size 0.2s;
-   }
 </style>

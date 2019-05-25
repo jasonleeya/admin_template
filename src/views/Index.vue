@@ -4,7 +4,7 @@
          <side-nav></side-nav>
       </el-aside>
       <el-container class="content-container">
-         <el-header height="82px">
+         <el-header height="92px">
             <my-header>
             </my-header>
          </el-header>
@@ -28,7 +28,7 @@
         },
         data() {
             return {
-                sideNavWidth: '210px'
+                sideNavWidth: '200px'
             }
         },
         mounted() {
@@ -46,7 +46,7 @@
                 if (this.$store.state.isSideNavCollapse) {
                     this.sideNavWidth = "65px";
                 } else {
-                    this.sideNavWidth = "210px";
+                    this.sideNavWidth = "200px";
                 }
             },
         }

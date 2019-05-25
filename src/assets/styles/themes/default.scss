@@ -1,23 +1,24 @@
 @import "../cover";
 
-$sideNavBGColor: #545c64;
-$sideNavTextColor: #fff;
-$sideNavHoverBGColor: #434A50;
-$headerBGColor: #eaeeeb;
-$headerTextColor: #000;
-$logoTextColor: #fff;
-$bookmarkBGColor: #d9d2ce;
-$borderColor: #dedede;
+$sideNavBGColor: #ebf1f6;
+$sideNavTextColor: #606266;
+$sideNavHoverBGColor: #f5f8fb;
+$headerBGColor: #ebf1f6;
+$headerTextColor: #606266;
+$headerTextHoverColor: #2f74ff;
+$logoTextColor: #2f74ff;
+$bookmarkBGColor: #e4e9ee;
+$borderColor: #cfd7e5;
 $mainBgColor: #ffffff;
-$bookmarkTextColor: #8a8a8a;
-$bookmarkTextActiveColor: #000;
-$bookmarkArrowBGColor: #d9d9d9;
-$bookmarkArrowColor: #000;
+$bookmarkTextColor: #606266;
+$bookmarkTextActiveColor: #2f74ff;
+$bookmarkArrowBGColor: #f5f8fb;
+$bookmarkArrowColor: #dcdce6;
 $bookmarkActiveBgColor: $mainBgColor;
 $contentContainerBGColor: $headerBGColor;
+$elButtonBGC:$bookmarkBGColor;
 
-
-body[default] {
+body[theme='default'] {
   @include cover;
 
   .el-main {
@@ -71,6 +72,21 @@ body[default] {
 
     .header-top {
       color: $headerTextColor;
+      span:hover{
+        color:$headerTextHoverColor
+      }
+      .el-button {
+        font-size: 14px;
+        color: $headerTextColor;
+        border: 1px solid $borderColor;
+        background-color: $elButtonBGC;
+        &:hover{
+          color:$headerTextHoverColor;
+          background-color: rgba($elButtonBGC,0.8);
+          border-color: $headerTextHoverColor;
+        }
+
+      }
     }
 
     .header-bookmark {
@@ -120,7 +136,15 @@ body[default] {
       }
 
       .arrow {
-        background-color: $bookmarkArrowBGColor;
+        background-color: $headerBGColor;
+      }
+      .left-arrow {
+        border-right: 1px solid $borderColor;
+        border-top: 1px solid $borderColor;
+      }
+      .right-arrow {
+        border-left: 1px solid $borderColor;
+        border-top: 1px solid $borderColor;
       }
 
       .arrow span {
@@ -133,11 +157,10 @@ body[default] {
       }
 
       .close-all:hover {
+        color: $headerTextHoverColor;
       }
 
     }
   }
-
-
 
 }
