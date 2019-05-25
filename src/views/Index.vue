@@ -3,7 +3,7 @@
       <el-aside class="aside" :width="sideNavWidth">
          <side-nav></side-nav>
       </el-aside>
-      <el-container>
+      <el-container class="content-container">
          <el-header height="82px">
             <my-header>
             </my-header>
@@ -61,4 +61,9 @@
    .el-header {
       margin:0 -20px;
    }
+   .el-main {
+      margin: 0 20px;
+   }
+
+
 </style>

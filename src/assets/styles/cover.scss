@@ -51,8 +51,9 @@
   .el-menu--popup .el-menu-item.is-active {
     background-color: #fff!important;
   }
-  /*.el-submenu__title:hover {
-    background-color: red!important;
-  }*/
+  .el-menu--popup .el-icon-arrow-right::before {
+   color: #000;
+
+  }
   /*暴力改变样式、、、*/
 }

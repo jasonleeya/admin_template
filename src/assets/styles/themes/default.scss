@@ -1,18 +1,32 @@
 @import "../cover";
+
 $sideNavBGColor: #545c64;
 $sideNavTextColor: #fff;
 $sideNavHoverBGColor: #434A50;
 $headerBGColor: #eaeeeb;
 $bookmarkBGColor: #d9d2ce;
-$bookmarkActiveBgColor: #ffffff;
-$bookmarkTextColor: #8a8a8a;
-$bookmarkTextActiveColor:#000;
-$bookmarkArrowBGColor: #d9d9d9;
-$bookmarkArrowColor:#000;
 $borderColor: #dedede;
+$mainBgColor: #ffffff;
+$bookmarkActiveBgColor: $mainBgColor;
+$contentContainerBGColor: $headerBGColor;
+$bookmarkTextColor: #8a8a8a;
+$bookmarkTextActiveColor: #000;
+$bookmarkArrowBGColor: #d9d9d9;
+$bookmarkArrowColor: #000;
+
 
 body[default] {
   @include cover;
+
+  .el-main {
+    background-color: $mainBgColor;
+    border: 1px solid $borderColor;
+
+  }
+
+  .content-container {
+    background-color: $contentContainerBGColor;
+  }
 
   .side-nav-menu {
     background-color: $sideNavBGColor !important;
@@ -48,8 +62,9 @@ body[default] {
 
   .header {
     background-color: $headerBGColor;
-    border-bottom: 1px solid $borderColor;
+    //border-bottom: 1px solid $borderColor;
   }
+
   .header-bookmark {
     .bookmarks {
       background-color: $bookmarkBGColor;
@@ -61,33 +76,39 @@ body[default] {
     .bookmark {
       border-right: 1px solid $borderColor;
     }
+
     .bookmark:hover {
       font-size: 16px;
       color: $bookmarkTextActiveColor;
-      transition: font-size 0.3s,width 0.3s;
+      transition: font-size 0.3s, width 0.3s;
     }
 
     .bookmark-active {
       background-color: $bookmarkActiveBgColor;
       color: $bookmarkTextActiveColor;
     }
+
     .iconguanbi1 {
       color: $bookmarkTextActiveColor;
     }
+
     .arrow {
       background-color: $bookmarkArrowBGColor;
     }
+
     .arrow span {
       color: $bookmarkArrowColor;
     }
+
     .close-all {
-      background-color:rgba($bookmarkBGColor,0.6) ;
+      background-color: rgba($bookmarkBGColor, 0.6);
       color: $bookmarkTextColor;
       border: 1px solid $borderColor;
       border-bottom: none;
     }
+
     .close-all:hover {
-      background-color:rgba($bookmarkBGColor,0.9);
+      background-color: rgba($bookmarkBGColor, 0.9);
     }
   }
 
