@@ -131,7 +131,7 @@
       overflow-x: hidden;
       overflow-y: hidden;
       margin-top: 7px;
-      margin-left: 20px;
+      /*margin-left: 20px;*/
       position: relative;
       /*display: inline-block;*/
       white-space: nowrap;
@@ -163,7 +163,7 @@
    }
 
    .bookmarks li:last-child {
-      border-right: none;
+      border-right: none!important;
    }
 
    .bookmarks li:last-child:after,
@@ -212,7 +212,7 @@
    .left-arrow {
       border-top-right-radius: 5px;
       /*border-bottom-right-radius: 5px;*/
-
+      z-index: 999;
    }
 
    .iconguanbi1 {
