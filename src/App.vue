@@ -5,8 +5,10 @@
 </template>
 
 <style lang="scss">
-   #app {
-
+   @import "assets/styles/themes/themes";
+   html,body,#app {
+      width: 100%;
+      height: 100%;
    }
 
 </style>

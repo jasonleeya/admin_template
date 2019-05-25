@@ -1,0 +1,95 @@
+@import "../cover";
+$sideNavBGColor: #545c64;
+$sideNavTextColor: #fff;
+$sideNavHoverBGColor: #434A50;
+$headerBGColor: #eaeeeb;
+$bookmarkBGColor: #d9d2ce;
+$bookmarkActiveBgColor: #ffffff;
+$bookmarkTextColor: #8a8a8a;
+$bookmarkTextActiveColor:#000;
+$bookmarkArrowBGColor: #d9d9d9;
+$bookmarkArrowColor:#000;
+$borderColor: #dedede;
+
+body[default] {
+  @include cover;
+
+  .side-nav-menu {
+    background-color: $sideNavBGColor !important;
+  }
+
+  .el-submenu .el-menu {
+    background-color: $sideNavBGColor !important;
+  }
+
+  .el-submenu__title *, .el-menu-item * {
+    color: $sideNavTextColor;
+  }
+
+  .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
+    background-color: $sideNavHoverBGColor !important;
+  }
+
+  .el-menu-item.is-active {
+    background-color: $sideNavBGColor !important;
+  }
+
+  .aside {
+    background-color: $sideNavBGColor;
+  }
+
+  .el-menu-item.is-active {
+    color: $sideNavTextColor !important;
+  }
+
+  .side-nav-menu i {
+    color: $sideNavTextColor !important;
+  }
+
+  .header {
+    background-color: $headerBGColor;
+    border-bottom: 1px solid $borderColor;
+  }
+  .header-bookmark {
+    .bookmarks {
+      background-color: $bookmarkBGColor;
+      color: $bookmarkTextColor;
+      border: 1px solid $borderColor;
+      border-bottom: none;
+    }
+
+    .bookmark {
+      border-right: 1px solid $borderColor;
+    }
+    .bookmark:hover {
+      font-size: 16px;
+      color: $bookmarkTextActiveColor;
+      transition: font-size 0.3s,width 0.3s;
+    }
+
+    .bookmark-active {
+      background-color: $bookmarkActiveBgColor;
+      color: $bookmarkTextActiveColor;
+    }
+    .iconguanbi1 {
+      color: $bookmarkTextActiveColor;
+    }
+    .arrow {
+      background-color: $bookmarkArrowBGColor;
+    }
+    .arrow span {
+      color: $bookmarkArrowColor;
+    }
+    .close-all {
+      background-color:rgba($bookmarkBGColor,0.6) ;
+      color: $bookmarkTextColor;
+      border: 1px solid $borderColor;
+      border-bottom: none;
+    }
+    .close-all:hover {
+      background-color:rgba($bookmarkBGColor,0.9);
+    }
+  }
+
+
+}

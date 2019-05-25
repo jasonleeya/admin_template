@@ -9,7 +9,36 @@ export default new Router({
   routes: [{
       path: '/',
       name: 'Index',
-      component: () => import( './views/Index')
+      redirect: '/one',
+      component: () => import( './views/Index'),
+      children:[
+          {
+              //因为某些设置首页路由只能为 "/"
+              path: '',
+              component: () => import( './views/PageOne'),
+              meta:{
+                  cName:'首页'
+              }
+          }, {
+              path: '/two',
+              component: () => import( './views/PageTwo'),
+              meta:{
+                  cName:'页面二'
+              }
+          }, {
+              path: '/three',
+              component: () => import( './views/PageThree'),
+              meta:{
+                  cName:'页面三'
+              }
+          }, {
+              path: '/four',
+              component: () => import( './views/PageFour'),
+              meta:{
+                  cName:'页面四'
+              }
+          },
+      ]
     }
   ]
 })
