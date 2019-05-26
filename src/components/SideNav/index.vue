@@ -114,17 +114,17 @@
    .logo {
       text-align: center;
       width: 100%;
-      /*height: 60px;*/
       padding-top: 10px;
    }
 
    .logo-img {
-      width: 24px;
+      width: 30px;
    }
 
    .logo-text {
       font-size: 24px;
-      height: 30px;
+      height: 47px;
+      line-height: 47px;
    }
 
 </style>

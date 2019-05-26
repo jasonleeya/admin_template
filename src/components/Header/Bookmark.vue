@@ -212,7 +212,7 @@
    .left-arrow {
       border-top-right-radius: 5px;
       /*border-bottom-right-radius: 5px;*/
-      z-index: 999;
+
    }
 
    .iconguanbi1 {

@@ -138,12 +138,14 @@ body[theme=#{$themeName}] {
       }
 
       .close-all {
-        color: $bookmarkTextColor;
+        color:  $bookmarkBGColor*1.2;
         border-bottom: none;
       }
 
       .close-all:hover {
-        color: $headerTextHoverColor;
+        color: $bookmarkTextColor;
+
+
       }
 
     }

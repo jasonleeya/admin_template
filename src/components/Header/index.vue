@@ -5,29 +5,29 @@
          <span @click="toggleSideNavCollapse" v-else="asideCollapse" class="iconfont iconcaidankai"></span>
 
 
-       <div class="header-top-options">
-          <el-dropdown trigger="click" class="greeting">
-             <el-button size="mini" plain>
-                你好，JasonLee<i class="el-icon-arrow-down el-icon--right"></i>
-             </el-button>
-             <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>修改密码</el-dropdown-item>
-                <el-dropdown-item>退出登录</el-dropdown-item>
-             </el-dropdown-menu>
-          </el-dropdown>
+         <div class="header-top-options">
+            <el-dropdown trigger="click" class="greeting">
+               <el-button size="mini" plain>
+                  你好，JasonLee<i class="el-icon-arrow-down el-icon--right"></i>
+               </el-button>
+               <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item>修改密码</el-dropdown-item>
+                  <el-dropdown-item>退出登录</el-dropdown-item>
+               </el-dropdown-menu>
+            </el-dropdown>
 
-          <el-dropdown @command='toggleTheme' trigger="click" class="theme">
-             <span class="iconfont iconzhuti"></span>
-             <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item
-                        v-for="(item,index) in themes"
-                        :key="index"
-                        :command="(item)">{{item}}
-                </el-dropdown-item>
-             </el-dropdown-menu>
-          </el-dropdown>
-       </div>
-       </div>
+            <el-dropdown @command='toggleTheme' trigger="click" class="theme">
+               <span class="iconfont iconzhuti"></span>
+               <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item
+                          v-for="item in themes"
+                          :key="item.name"
+                          :command="(item.theme)">{{item.name}}
+                  </el-dropdown-item>
+               </el-dropdown-menu>
+            </el-dropdown>
+         </div>
+      </div>
 
 
       <bookmark></bookmark>
@@ -46,8 +46,14 @@
             return {
                 asideCollapse: false,
                 themes: [
-                    'default',
-                    'theme1'
+                    {
+                        name: '默认',
+                        theme: 'default',
+                    },
+                    {
+                        name: '主题一',
+                        theme: 'theme1',
+                    },
                 ]
             }
         },
@@ -56,7 +62,7 @@
                 this.$store.dispatch('toggleSideNavCollapse')
             },
             toggleTheme(theme) {
-                document.body.setAttribute('theme',theme)
+                document.body.setAttribute('theme', theme)
             }
         },
         watch: {
@@ -82,7 +88,7 @@
       height: 50px;
       line-height: 55px;
       position: relative;
-      top:0;
+      top: 0;
    }
 
    .header-top-options {
@@ -91,9 +97,11 @@
       top: 0;
 
    }
+
    .el-dropdown {
       height: 35px;
    }
+
    .greeting {
       margin-right: 20px;
       float: right;
