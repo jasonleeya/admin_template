@@ -1,8 +1,10 @@
 <template>
    <div class="header">
       <div class="header-top">
-         <span @click="toggleSideNavCollapse" v-if="!asideCollapse" class="iconfont iconcaidanguan"></span>
-         <span @click="toggleSideNavCollapse" v-else="asideCollapse" class="iconfont iconcaidankai"></span>
+         <el-tooltip :content="asideCollapse?'关闭':'展开'" :open-delay="1200" :hide-after="0" placement="right" effect="light">
+            <span @click="toggleSideNavCollapse" v-if="!asideCollapse" class="iconfont iconcaidanguan"></span>
+            <span @click="toggleSideNavCollapse" v-else="asideCollapse" class="iconfont iconcaidankai"></span>
+         </el-tooltip>
 
 
          <div class="header-top-options">

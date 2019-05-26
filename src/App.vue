@@ -10,5 +10,11 @@
       width: 100%;
       height: 100%;
    }
+   #app{
+      min-width: 1000px;
+      min-height: 800px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+   }
 
 </style>
