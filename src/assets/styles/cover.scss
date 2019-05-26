@@ -21,7 +21,7 @@
 
   }
   .el-menu--popup  li:hover {
-    background-color: #fff !important;
+    background-color: rgba($headerBGColor,0.1) !important;
   }
   .el-menu--popup .el-submenu__title {
     background-color: #f4f4f4 !important;

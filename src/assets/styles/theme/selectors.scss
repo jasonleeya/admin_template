@@ -3,6 +3,10 @@ body[theme=#{$themeName}] {
 
   @include structureAdjustOfEachTheme;
 
+  div, span {
+    transition: background-color 1s, color 1s;
+  }
+
   .el-main {
     background-color: $mainBgColor;
     border: 1px solid $borderColor;
@@ -31,9 +35,11 @@ body[theme=#{$themeName}] {
     .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
       background-color: $sideNavHoverBGColor !important;
     }
-    .el-submenu__title:focus, .el-submenu__title:hover{
-    background-color: $sideNavHoverBGColor;
+
+    .el-submenu__title:focus, .el-submenu__title:hover {
+      background-color: $sideNavHoverBGColor;
     }
+
     .el-menu-item.is-active {
       background-color: $sideNavBGColor !important;
     }
@@ -56,32 +62,37 @@ body[theme=#{$themeName}] {
 
     .header-top {
       color: $headerTextColor;
-      span:hover{
-        color:$headerTextHoverColor
+
+      span:hover {
+        color: $headerTextHoverColor
       }
+
       .el-button {
         font-size: 14px;
         color: $headerTextColor;
         border: 1px solid $borderColor;
         background-color: $elButtonBGC;
-        &:hover{
-          color:$headerTextHoverColor;
-          background-color: rgba($elButtonBGC,0.8);
+
+        &:hover {
+          color: $headerTextHoverColor;
+          background-color: rgba($elButtonBGC, 0.8);
           border-color: $headerTextHoverColor;
         }
 
       }
-      .theme{
+
+      .theme {
         color: $headerTextColor;
-        &:hover{
-          color:$headerTextHoverColor;
+
+        &:hover {
+          color: $headerTextHoverColor;
         }
       }
     }
 
     .header-bookmark {
       .bookmarks {
-        background-color: $bookmarkBGColor;
+        background-color: $headerBGColor;
         color: $bookmarkTextColor;
         border: 1px solid $borderColor;
         border-bottom: none;
@@ -98,10 +109,11 @@ body[theme=#{$themeName}] {
       }
 
       .bookmarks-last-not-active li:last-child:after {
-        background-color: $bookmarkBGColor
+        background-color: $bookmarkBGColor/0.95
       }
 
       .bookmark {
+        background-color: $bookmarkBGColor/0.95;
         border-right: 1px solid $borderColor;
       }
 
@@ -128,10 +140,12 @@ body[theme=#{$themeName}] {
       .arrow {
         background-color: $headerBGColor;
       }
+
       .left-arrow {
         border-right: 1px solid $borderColor;
         border-top: 1px solid $borderColor;
       }
+
       .right-arrow {
         border-left: 1px solid $borderColor;
         border-top: 1px solid $borderColor;
@@ -142,7 +156,7 @@ body[theme=#{$themeName}] {
       }
 
       .close-all {
-        color:  $bookmarkBGColor*1.2;
+        color: $bookmarkBGColor*1.2;
         border-bottom: none;
       }
 

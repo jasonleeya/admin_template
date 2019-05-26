@@ -160,7 +160,6 @@
       position: relative;
       border-top-right-radius: 8px;
       border-top-left-radius: 8px;
-      box-sizing: content-box;
    }
 
    .bookmarks li:last-child {
@@ -171,18 +170,18 @@
    .bookmarks-last-not-active li:last-child:after {
       content: '';
       display: inline-block;
-      width: 10px;
-      height: 27px;
+      width: 5px;
+      height: 5px;
       position: absolute;
-      right: -10px;
+      right: -5px;
       bottom: 0;
    }
 
    .bookmarks:after {
       content: '';
       display: inline-block;
-      width: 10px;
-      height: 27px;
+      width: 5px;
+      height: 5px;
       position: absolute;
       bottom: 0;
       border-bottom-left-radius: 8px;
@@ -212,7 +211,7 @@
 
    .left-arrow {
       border-top-right-radius: 5px;
-      /*border-bottom-right-radius: 5px;*/
+      border-bottom-right-radius: 5px;
       z-index: 999;
    }
 
@@ -230,7 +229,7 @@
    .right-arrow {
       right: 0;
       border-top-left-radius: 5px;
-      /*border-bottom-left-radius: 5px;*/
+      border-bottom-left-radius: 5px;
    }
 
    .close-all {

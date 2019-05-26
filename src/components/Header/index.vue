@@ -53,7 +53,7 @@
                     {
                         name: '主题一',
                         theme: 'theme1',
-                    },{
+                    }, {
                         name: '主题三',
                         theme: 'theme2',
                     },
@@ -92,6 +92,10 @@
       line-height: 55px;
       position: relative;
       top: 0;
+   }
+
+   .header-top span {
+      transition: color 0.2s !important;
    }
 
    .header-top-options {

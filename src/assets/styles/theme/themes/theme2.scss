@@ -10,33 +10,38 @@ $headerTextColor: #fff;
 $headerTextHoverColor: #fff;
 $logoTextColor: #fff;
 $bookmarkBGColor: rgba(#fff*0.8, 0.5);
-$borderColor: none;
+$borderColor: transparent;
 $mainBgColor: #ffffff;
 $bookmarkTextColor: #fff;
 $bookmarkTextActiveColor: #000;
 $bookmarkArrowBGColor: #fff;
-$bookmarkArrowColor: #fff;
+$bookmarkArrowColor: rgba(#000,0.5);
 $bookmarkActiveBgColor: $mainBgColor;
 $contentContainerBGColor: $headerBGColor;
 $elButtonBGC: $bookmarkBGColor;
 
 
 @mixin structureAdjustOfEachTheme {
-  #app{
+  #app {
     background-image: url("https://d2admin.fairyever.com/image/theme/star/bg.jpg");
   }
   .el-main {
-    margin-right: 15px;
+    margin-right: 20px;
   }
-  .el-header {
-    margin: 0 -20px;
+  .arrow,.right-arrow, .left-arrow {
+    background-color: #fff !important;
   }
 
+  .bookmarks {
+    margin-left: -2px;
+  }
   .bookmarks li:last-child:after,
   .bookmarks-last-not-active li:last-child:after {
     display: none;
   }
-
+  .bookmark {
+    margin-left: 1px;
+  }
 }
 
 
