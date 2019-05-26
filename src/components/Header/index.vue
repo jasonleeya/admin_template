@@ -53,6 +53,9 @@
                     {
                         name: '主题一',
                         theme: 'theme1',
+                    },{
+                        name: '主题三',
+                        theme: 'theme2',
                     },
                 ]
             }

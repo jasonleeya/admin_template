@@ -44,7 +44,7 @@
         watch:{
             "$store.state.isSideNavCollapse"() {
                 if (this.$store.state.isSideNavCollapse) {
-                    this.sideNavWidth = "65px";
+                    this.sideNavWidth = "63px";
                 } else {
                     this.sideNavWidth = "200px";
                 }

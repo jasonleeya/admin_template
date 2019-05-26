@@ -1,6 +1,8 @@
 body[theme=#{$themeName}] {
   @include cover;
 
+  @include structureAdjustOfEachTheme;
+
   .el-main {
     background-color: $mainBgColor;
     border: 1px solid $borderColor;
@@ -29,7 +31,9 @@ body[theme=#{$themeName}] {
     .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
       background-color: $sideNavHoverBGColor !important;
     }
-
+    .el-submenu__title:focus, .el-submenu__title:hover{
+    background-color: $sideNavHoverBGColor;
+    }
     .el-menu-item.is-active {
       background-color: $sideNavBGColor !important;
     }

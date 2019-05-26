@@ -1,12 +1,12 @@
 
 @mixin cover{
   .el-menu--vertical {
-    background-color: #fff;
+    background-color: #f4f4f4;
     color: #000!important;
 
   }
   .el-menu--popup {
-    background-color: #fff;
+    background-color: #f4f4f4;
     color: #000!important;
 
   }
@@ -16,44 +16,44 @@
 
   }
   .el-menu--popup li {
-    background-color: #fff !important;
+    background-color: #f4f4f4 !important;
     color: #000!important;
 
   }
   .el-menu--popup  li:hover {
-    background-color: #d7f7ff !important;
+    background-color: #fff !important;
   }
   .el-menu--popup .el-submenu__title {
-    background-color: #fff !important;
+    background-color: #f4f4f4 !important;
   }
   .el-menu--popup .el-submenu__title span {
     color: #000!important;
   }
   .el-menu--popup .el-submenu .el-menu-item:hover {
-    background-color: #fff!important;
+    background-color: #f4f4f4!important;
   }
   .el-menu--popup {
-    background-color: #fff!important;
+    background-color: #f4f4f4!important;
 
   }
   .el-menu--popup span {
     color: #000!important;
   }
   .el-menu--popup .is-active {
-    background-color: #fff!important;
+    background-color: #f4f4f4!important;
   }
   .el-menu--popup .el-submenu .el-menu {
-    background-color: #fff!important;
+    background-color: #f4f4f4!important;
   }
   .el-menu--popup  .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
-    background-color: #fff!important;
+    background-color: #f4f4f4!important;
   }
   .el-menu--popup .el-menu-item.is-active {
-    background-color: #fff!important;
+    background-color: #f4f4f4!important;
   }
   .el-menu--popup .el-icon-arrow-right::before {
    color: #000;
-
   }
+
   /*暴力改变样式、、、*/
 }

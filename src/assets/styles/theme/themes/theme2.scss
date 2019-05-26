@@ -1,0 +1,43 @@
+@import "../../cover";
+
+$themeName: 'theme2';
+
+$sideNavBGColor: transparent;
+$sideNavTextColor: #fff;
+$sideNavHoverBGColor: transparent;
+$headerBGColor: transparent;
+$headerTextColor: #fff;
+$headerTextHoverColor: #fff;
+$logoTextColor: #fff;
+$bookmarkBGColor: rgba(#fff*0.8, 0.5);
+$borderColor: none;
+$mainBgColor: #ffffff;
+$bookmarkTextColor: #fff;
+$bookmarkTextActiveColor: #000;
+$bookmarkArrowBGColor: #fff;
+$bookmarkArrowColor: #fff;
+$bookmarkActiveBgColor: $mainBgColor;
+$contentContainerBGColor: $headerBGColor;
+$elButtonBGC: $bookmarkBGColor;
+
+
+@mixin structureAdjustOfEachTheme {
+  #app{
+    background-image: url("https://d2admin.fairyever.com/image/theme/star/bg.jpg");
+  }
+  .el-main {
+    margin-right: 15px;
+  }
+  .el-header {
+    margin: 0 -20px;
+  }
+
+  .bookmarks li:last-child:after,
+  .bookmarks-last-not-active li:last-child:after {
+    display: none;
+  }
+
+}
+
+
+@import "../selectors";

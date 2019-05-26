@@ -160,6 +160,7 @@
       position: relative;
       border-top-right-radius: 8px;
       border-top-left-radius: 8px;
+      box-sizing: content-box;
    }
 
    .bookmarks li:last-child {
@@ -212,7 +213,7 @@
    .left-arrow {
       border-top-right-radius: 5px;
       /*border-bottom-right-radius: 5px;*/
-
+      z-index: 999;
    }
 
    .iconguanbi1 {
