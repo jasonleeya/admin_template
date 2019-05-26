@@ -56,8 +56,14 @@
                         name: '主题一',
                         theme: 'theme1',
                     }, {
-                        name: '主题三',
+                        name: '主题二',
                         theme: 'theme2',
+                    }, {
+                        name: '主题三',
+                        theme: 'theme3',
+                    },{
+                        name: '主题四',
+                        theme: 'theme4',
                     },
                 ]
             }
@@ -114,6 +120,9 @@
    .greeting {
       margin-right: 20px;
       float: right;
+   }
+   .greeting .el-button:hover {
+      background-color: transparent!important;
    }
 
    .theme {

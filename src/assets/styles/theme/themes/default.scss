@@ -1,5 +1,6 @@
 @import "../../cover";
-$themeName:'default';
+
+$themeName: 'default';
 
 $sideNavBGColor: #1F292D;
 $sideNavTextColor: #e8defb;
@@ -17,11 +18,12 @@ $bookmarkArrowBGColor: #f5f8fb;
 $bookmarkArrowColor: #dcdce6;
 $bookmarkActiveBgColor: $mainBgColor;
 $contentContainerBGColor: $headerBGColor;
-$elButtonBGC:$bookmarkBGColor;
+$elButtonBGC: $bookmarkBGColor;
 
-@mixin structureAdjustOfEachTheme{
+@mixin structureAdjustOfEachTheme {
 
-  }
+}
+
 @import "../selectors";
 
 

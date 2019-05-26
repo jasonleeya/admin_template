@@ -1,0 +1,50 @@
+@import "../../cover";
+
+$themeName: 'theme4';
+
+$sideNavBGColor: transparent;
+$sideNavTextColor: #606266;
+$sideNavHoverBGColor: #e6e6e4;
+$headerBGColor: transparent;
+$headerTextColor: #606266;
+$headerTextHoverColor: #606266;
+$logoTextColor: #606266;
+$bookmarkBGColor: #D2D2D0;
+$borderColor: #D2D2D0;
+$mainBgColor: #fff;
+$bookmarkTextColor: #606266;
+$bookmarkTextActiveColor: #000;
+$bookmarkArrowBGColor: #606266;
+$bookmarkArrowColor: rgba(#000,0.5);
+$bookmarkActiveBgColor: $mainBgColor;
+$contentContainerBGColor: $headerBGColor;
+$elButtonBGC: $bookmarkBGColor;
+
+
+@mixin structureAdjustOfEachTheme {
+  #app {
+    background-image: url("https://d2admin.fairyever.com/image/theme/line/bg.jpg");
+  }
+  .el-main {
+    margin-right: 20px;
+  }
+  .arrow,.right-arrow, .left-arrow {
+    background-color: #606266 !important;
+  }
+
+  .bookmarks {
+    margin-left: -1px;
+    .bookmark {
+      border: 1px solid $borderColor!important;
+    }
+    .bookmark-active {
+      border: 1px solid $borderColor!important;
+    }
+  }
+  .bookmark {
+    margin-left: 1px;
+  }
+}
+
+
+@import "../selectors";

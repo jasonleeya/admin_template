@@ -18,6 +18,10 @@ body[theme=#{$themeName}] {
   }
 
   .aside {
+    * {
+      user-select: none;
+    }
+
     background-color: $sideNavBGColor;
 
     .side-nav-menu {
@@ -58,6 +62,10 @@ body[theme=#{$themeName}] {
   }
 
   .header {
+    * {
+      user-select: none;
+    }
+
     background-color: $headerBGColor;
 
     .header-top {
@@ -92,10 +100,9 @@ body[theme=#{$themeName}] {
 
     .header-bookmark {
       .bookmarks {
-        background-color: $headerBGColor;
-        color: $bookmarkTextColor;
-        border: 1px solid $borderColor;
-        border-bottom: none;
+        //color: $bookmarkTextColor;
+        //border: 1px solid $borderColor;
+        //border-bottom: 1px solid $borderColor;
       }
 
       .bookmarks:after {
@@ -115,6 +122,7 @@ body[theme=#{$themeName}] {
       .bookmark {
         background-color: $bookmarkBGColor/0.95;
         border-right: 1px solid $borderColor;
+        color: $mainBgColor;
       }
 
       .bookmark:hover {

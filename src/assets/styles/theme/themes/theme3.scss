@@ -1,6 +1,6 @@
 @import "../../cover";
 
-$themeName: 'theme2';
+$themeName: 'theme3';
 
 $sideNavBGColor: transparent;
 $sideNavTextColor: #fff;
@@ -9,13 +9,13 @@ $headerBGColor: transparent;
 $headerTextColor: #fff;
 $headerTextHoverColor: #fff;
 $logoTextColor: #fff;
-$bookmarkBGColor: rgba(#fff*0.8, 0.5);
+$bookmarkBGColor: rgba(#fff, 0.2);
 $borderColor: transparent;
 $mainBgColor: #ffffff;
 $bookmarkTextColor: #fff;
 $bookmarkTextActiveColor: #000;
 $bookmarkArrowBGColor: #fff;
-$bookmarkArrowColor: rgba(#000,0.5);
+$bookmarkArrowColor: rgba(#000, 0.5);
 $bookmarkActiveBgColor: $mainBgColor;
 $contentContainerBGColor: $headerBGColor;
 $elButtonBGC: $bookmarkBGColor;
@@ -23,18 +23,29 @@ $elButtonBGC: $bookmarkBGColor;
 
 @mixin structureAdjustOfEachTheme {
   #app {
-    background-image: url("https://d2admin.fairyever.com/image/theme/star/bg.jpg");
+    background-image: linear-gradient(300deg, #67C4F5 0%, #9066ED 50%,  #BA05E3 100%);
   }
+  .aside {
+    .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
+      background-image: linear-gradient(to right, #CC4BEA, #AF27E7);
+    }
+
+    .el-submenu__title:focus, .el-submenu__title:hover {
+      background-color: $sideNavHoverBGColor;
+    }
+  }
+
   .el-main {
     margin-right: 20px;
   }
-  .arrow,.right-arrow, .left-arrow {
+  .arrow, .right-arrow, .left-arrow {
     background-color: #fff !important;
   }
 
   .bookmarks {
     margin-left: -2px;
   }
+
   .bookmark {
     margin-left: 1px;
   }

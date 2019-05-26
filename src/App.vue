@@ -12,7 +12,6 @@
    }
    #app{
       min-width: 1000px;
-      min-height: 800px;
       background-size: 100% 100%;
       background-repeat: no-repeat;
    }

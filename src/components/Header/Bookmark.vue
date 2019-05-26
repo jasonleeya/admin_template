@@ -77,10 +77,10 @@
 
                 if (bookmarkWidth + 40 > headerWidth) {
                     this.shouldShowArrows = true;
-                    document.querySelector('.el-main').style.borderTopRightRadius='0'
+                    document.querySelector('.el-main').style.borderTopRightRadius = '0'
                 } else {
                     this.shouldShowArrows = false;
-                    document.querySelector('.el-main').style.borderTopRightRadius='8px'
+                    document.querySelector('.el-main').style.borderTopRightRadius = '8px'
                 }
 
             },
@@ -130,7 +130,7 @@
    .bookmark-wrapper {
       overflow-x: hidden;
       overflow-y: hidden;
-      margin-top: 7px;
+      margin-top: 8px;
       /*margin-left: 20px;*/
       position: relative;
       /*display: inline-block;*/
@@ -147,6 +147,8 @@
       height: 35px;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+      background-color: transparent;
+      margin-left: 1px;
    }
 
    .bookmark {
@@ -163,29 +165,31 @@
    }
 
    .bookmarks li:last-child {
-      border-right: none!important;
+      border-right: none ;
    }
+/*
 
    .bookmarks li:last-child:after,
    .bookmarks-last-not-active li:last-child:after {
       content: '';
       display: inline-block;
-      width: 5px;
-      height: 5px;
+      width: 6px;
+      height: 6px;
       position: absolute;
-      right: -5px;
+      right: -6px;
       bottom: 0;
    }
 
    .bookmarks:after {
       content: '';
       display: inline-block;
-      width: 5px;
-      height: 5px;
+      width: 6px;
+      height: 6px;
       position: absolute;
       bottom: 0;
       border-bottom-left-radius: 8px;
    }
+*/
 
    .bookmark span {
       transition: background-color 0.5s, color 0.5s;
@@ -240,11 +244,14 @@
       display: inline-block;
       z-index: 9999;
       margin-left: 10px;
+      transition: color 0s, background-color 0s !important;
    }
 
    .close-all span {
       display: block;
-      font-size: 14px;
+      font-size: 16px;
+      transition: color 0s, background-color 0s !important;
    }
+
 
 </style>
