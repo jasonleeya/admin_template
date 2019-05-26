@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-   @import "assets/styles/themes/themes";
+   @import "assets/styles/theme/index.scss";
    html,body,#app {
       width: 100%;
       height: 100%;

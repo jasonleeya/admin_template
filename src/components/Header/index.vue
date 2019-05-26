@@ -95,7 +95,6 @@
       height: 35px;
    }
    .greeting {
-      font-size: 15px;
       margin-right: 20px;
       float: right;
    }

@@ -65,7 +65,6 @@
       margin:0 -20px;
    }
    .el-main {
-      margin-right: -1px;
       border-top-right-radius: 5px;
    }
 

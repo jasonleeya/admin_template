@@ -1,0 +1,22 @@
+@import "../../cover";
+$themeName:'theme1';
+
+$sideNavBGColor: #1F292D;
+$sideNavTextColor: #e8defb;
+$sideNavHoverBGColor: #ff4d6a*1.2;
+$headerBGColor: #ff4d6a;
+$headerTextColor: #e8defb;
+$headerTextHoverColor: #fff;
+$logoTextColor: #ff4d6a;
+$bookmarkBGColor: #ff4d6a*1.4;
+$borderColor: #ff4d6a;
+$mainBgColor: #ffffff;
+$bookmarkTextColor: #fff;
+$bookmarkTextActiveColor: #317398;
+$bookmarkArrowBGColor: #f5f8fb;
+$bookmarkArrowColor: #dcdce6;
+$bookmarkActiveBgColor: $mainBgColor;
+$contentContainerBGColor: $headerBGColor;
+$elButtonBGC:$bookmarkBGColor;
+
+@import "../selectors";
