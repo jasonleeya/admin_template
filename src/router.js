@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [{
+      path:'/login',
+      name:'Login',
+      component: () => import( './views/Login'),
+  },{
       path: '/',
       name: 'Index',
       redirect: '/one',
@@ -37,6 +41,12 @@ export default new Router({
               meta:{
                   cName:'页面四'
               }
+          },
+          {
+              path:'*',
+              name:'Login',
+              component: () => import( './views/Login'),
+              redirect: '/',
           },
       ]
     }

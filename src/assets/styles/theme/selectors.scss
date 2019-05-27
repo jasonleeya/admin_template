@@ -4,7 +4,7 @@ body[theme=#{$themeName}] {
   @include structureAdjustOfEachTheme;
 
   div, span {
-    transition: background-color 1s, color 1s;
+    //transition: background-color .1s, color 1s;
   }
 
   .el-main {

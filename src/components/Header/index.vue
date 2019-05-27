@@ -64,16 +64,18 @@
                     },{
                         name: '主题四',
                         theme: 'theme4',
-                    },
+                    }
                 ]
             }
         },
+
         methods: {
             toggleSideNavCollapse() {
                 this.$store.dispatch('toggleSideNavCollapse')
             },
             toggleTheme(theme) {
                 document.body.setAttribute('theme', theme)
+                localStorage.setItem('theme', theme);
             }
         },
         watch: {

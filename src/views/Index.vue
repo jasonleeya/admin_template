@@ -31,8 +31,13 @@
                 sideNavWidth: '200px'
             }
         },
-        mounted() {
-            // console.log(this.$router.options.routes)
+        created() {
+            if (localStorage.getItem('theme')) {
+                document.body.setAttribute('theme', localStorage.getItem('theme'));
+            } else {
+                document.body.setAttribute('theme', 'default');
+
+            }
         },
         beforeRouteUpdate(to,from,next) {
             this.$store.dispatch('pushBookmark', {
